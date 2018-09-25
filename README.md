@@ -4,6 +4,7 @@
 ![Cocoapods Compatible](https://img.shields.io/cocoapods/v/SwiftyTable.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+Pure-Swift library for statically typed table components.
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Features](#features)
