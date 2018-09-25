@@ -11,6 +11,7 @@
 		5A392B8D215A739A003E4814 /* SwiftyTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A392B8C215A739A003E4814 /* SwiftyTableTests.swift */; };
 		5A392B8F215A739A003E4814 /* SwiftyTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A392B81215A739A003E4814 /* SwiftyTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A392BC7215A8DEA003E4814 /* TableProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A392BC5215A8DEA003E4814 /* TableProtocols.swift */; };
+		5A392BCB215A8E30003E4814 /* IndexPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A392BCA215A8E30003E4814 /* IndexPath+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		5A392B8C215A739A003E4814 /* SwiftyTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyTableTests.swift; sourceTree = "<group>"; };
 		5A392B8E215A739A003E4814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A392BC5215A8DEA003E4814 /* TableProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableProtocols.swift; sourceTree = "<group>"; };
+		5A392BCA215A8E30003E4814 /* IndexPath+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexPath+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				5A392BC5215A8DEA003E4814 /* TableProtocols.swift */,
+				5A392BC9215A8E21003E4814 /* Extensions */,
 				5A392B81215A739A003E4814 /* SwiftyTable.h */,
 				5A392B82215A739A003E4814 /* Info.plist */,
 			);
@@ -87,6 +90,14 @@
 				5A392B8E215A739A003E4814 /* Info.plist */,
 			);
 			path = SwiftyTableTests;
+			sourceTree = "<group>";
+		};
+		5A392BC9215A8E21003E4814 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A392BCA215A8E30003E4814 /* IndexPath+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A392BC7215A8DEA003E4814 /* TableProtocols.swift in Sources */,
+				5A392BCB215A8E30003E4814 /* IndexPath+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
