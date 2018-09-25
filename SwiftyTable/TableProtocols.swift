@@ -89,6 +89,7 @@ public protocol TableComponent: RawRepresentable where Self.RawValue == Int {
 
 public extension TableComponent where Self: CaseIterable {
     
+    @inlinable
     public static var count: Int {
         return self.allCases.count
     }
