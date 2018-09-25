@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform           = :ios, "10.0"
 
-  s.source             = { :git => "https://github.com/jrsaruo/SwiftyTable.git", :tag => "v{s.version}" }
+  s.source             = { :git => "https://github.com/jrsaruo/SwiftyTable.git", :tag => "v#{s.version}" }
   s.source_files       = "SwiftyTable/**/*.swift"
 
   s.requires_arc       = true
