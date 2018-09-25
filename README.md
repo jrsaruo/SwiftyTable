@@ -137,6 +137,50 @@ enum InformationRow: Int, TableRow, CaseIterable {
 
 
 ## Usage
+Please create Section/Row enumeration that has integer raw values and conforms to `TableSection`/`TableRow` and `CaseIterable`.
+**Raw values must correspond to its section/row numbers.**
+```swift
+enum SomeSection: Int, TableSection, CaseIterable {
+    case zero
+    case one
+    case two
+}
+
+SomeSection.count // automatically returns 3.
+SomeSection(0) // .zero
+SomeSection(1) // .one
+SomeSection(2) // .two
+SomeSection(3) // assertionFailure
+
+enum SomeRow: Int, TableRow, CaseIterable {
+    case zero, one, two, three
+}
+```
+
+If the type does not conform to `CaseIterable`, you need to implement `count` property. However, hard coding like this can causes bugs, so you should use `CaseIterable`.
+```swift
+enum SomeSection: Int, TableSection {
+    case zero
+    case one
+    case two
+    static var count: Int { return 3 }
+}
+```
+
+Initialize Section or Row with specified section/row number.
+```swift
+let section = SomeSection(indexPath.section)
+let row = SomeRow(indexPath.row)
+```
+
+Initialize IndexPath with specified Section/Row.
+```swift
+// these indexPaths are the same.
+let indexPath1 = IndexPath(row: 1, section: 0)
+let indexPath2 = IndexPath(row: SomeRow.one, section: 0)
+let indexPath3 = IndexPath(row: 1, section: SomeSection.zero)
+let indexPath4 = IndexPath(row: SomeRow.one, section: SomeSection.zero)
+```
 
 
 ## License
