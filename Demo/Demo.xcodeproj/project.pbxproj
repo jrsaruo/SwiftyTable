@@ -11,6 +11,7 @@
 		5A392BAC215A75AD003E4814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A392BAB215A75AD003E4814 /* Assets.xcassets */; };
 		5A392BAF215A75AD003E4814 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A392BAD215A75AD003E4814 /* LaunchScreen.storyboard */; };
 		5A392BBD215A7D62003E4814 /* SwiftyTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A392BBC215A7D62003E4814 /* SwiftyTable.framework */; };
+		5A392BC2215A8DA0003E4814 /* DemoTableComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A392BC0215A8DA0003E4814 /* DemoTableComponents.swift */; };
 		5A392BC3215A8DA0003E4814 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A392BC1215A8DA0003E4814 /* DemoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		5A392BAE215A75AD003E4814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A392BB0215A75AD003E4814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A392BBC215A7D62003E4814 /* SwiftyTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A392BC0215A8DA0003E4814 /* DemoTableComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableComponents.swift; sourceTree = "<group>"; };
 		5A392BC1215A8DA0003E4814 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				5A392BA4215A75AC003E4814 /* AppDelegate.swift */,
+				5A392BC0215A8DA0003E4814 /* DemoTableComponents.swift */,
 				5A392BC1215A8DA0003E4814 /* DemoViewController.swift */,
 				5A392BAB215A75AD003E4814 /* Assets.xcassets */,
 				5A392BAD215A75AD003E4814 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			files = (
 				5A392BC3215A8DA0003E4814 /* DemoViewController.swift in Sources */,
 				5A392BA5215A75AC003E4814 /* AppDelegate.swift in Sources */,
+				5A392BC2215A8DA0003E4814 /* DemoTableComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
