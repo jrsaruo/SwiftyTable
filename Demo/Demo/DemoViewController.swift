@@ -17,8 +17,6 @@ class DemoViewController: UIViewController {
         return tableView
     }()
     
-    private let cellIdentifier = "cell identifier"
-    
     // MARK: - Life cycle
     
     override func viewDidLoad() {
@@ -26,7 +24,7 @@ class DemoViewController: UIViewController {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
+        self.tableView.register(UITableViewCell.self)
         
         setupViews()
     }
@@ -71,7 +69,7 @@ extension DemoViewController: UITableViewDataSource {
             rowTitle = InformationRow(indexPath.row).title
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(of: UITableViewCell.self, for: indexPath)
         cell.textLabel?.text = rowTitle
         return cell
     }
