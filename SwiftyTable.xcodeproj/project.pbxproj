@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1EB3CC21851D4000211A9C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1EB3CB21851D4000211A9C /* Reusable.swift */; };
 		5A392B88215A739A003E4814 /* SwiftyTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A392B7E215A739A003E4814 /* SwiftyTable.framework */; };
 		5A392B8D215A739A003E4814 /* SwiftyTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A392B8C215A739A003E4814 /* SwiftyTableTests.swift */; };
 		5A392B8F215A739A003E4814 /* SwiftyTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A392B81215A739A003E4814 /* SwiftyTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A1EB3CB21851D4000211A9C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		5A392B7E215A739A003E4814 /* SwiftyTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A392B81215A739A003E4814 /* SwiftyTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyTable.h; sourceTree = "<group>"; };
 		5A392B82215A739A003E4814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				5A392BC5215A8DEA003E4814 /* TableProtocols.swift */,
+				5A1EB3CB21851D4000211A9C /* Reusable.swift */,
 				5A392BC9215A8E21003E4814 /* Extensions */,
 				5A392B81215A739A003E4814 /* SwiftyTable.h */,
 				5A392B82215A739A003E4814 /* Info.plist */,
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1EB3CC21851D4000211A9C /* Reusable.swift in Sources */,
 				5A392BC7215A8DEA003E4814 /* TableProtocols.swift in Sources */,
 				5A392BCB215A8E30003E4814 /* IndexPath+Extension.swift in Sources */,
 			);
