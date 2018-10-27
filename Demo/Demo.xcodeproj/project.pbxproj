@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1EB3D221852C6B00211A9C /* DemoCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1EB3D121852C6B00211A9C /* DemoCells.swift */; };
 		5A392BA5215A75AC003E4814 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A392BA4215A75AC003E4814 /* AppDelegate.swift */; };
 		5A392BAC215A75AD003E4814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A392BAB215A75AD003E4814 /* Assets.xcassets */; };
 		5A392BAF215A75AD003E4814 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A392BAD215A75AD003E4814 /* LaunchScreen.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A1EB3D121852C6B00211A9C /* DemoCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCells.swift; sourceTree = "<group>"; };
 		5A392BA1215A75AC003E4814 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A392BA4215A75AC003E4814 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A392BAB215A75AD003E4814 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				5A392BA4215A75AC003E4814 /* AppDelegate.swift */,
 				5A392BC0215A8DA0003E4814 /* DemoTableComponents.swift */,
+				5A1EB3D121852C6B00211A9C /* DemoCells.swift */,
 				5A392BC1215A8DA0003E4814 /* DemoViewController.swift */,
 				5A392BAB215A75AD003E4814 /* Assets.xcassets */,
 				5A392BAD215A75AD003E4814 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 			files = (
 				5A392BC3215A8DA0003E4814 /* DemoViewController.swift in Sources */,
 				5A392BA5215A75AC003E4814 /* AppDelegate.swift in Sources */,
+				5A1EB3D221852C6B00211A9C /* DemoCells.swift in Sources */,
 				5A392BC2215A8DA0003E4814 /* DemoTableComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

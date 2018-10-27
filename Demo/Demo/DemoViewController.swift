@@ -13,7 +13,6 @@ class DemoViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .white
-        tableView.rowHeight = 50
         return tableView
     }()
     
@@ -25,6 +24,7 @@ class DemoViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(UITableViewCell.self)
+        self.tableView.register(DemoTableViewCell.self)
         
         setupViews()
     }
@@ -53,6 +53,8 @@ extension DemoViewController: UITableViewDataSource {
             return ProfileRow.count
         case .information:
             return InformationRow.count
+        case .collection:
+            return 1
         }
     }
     
@@ -61,17 +63,21 @@ extension DemoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let rowTitle: String
         switch Section(indexPath.section) {
         case .profile:
-            rowTitle = ProfileRow(indexPath.row).title
+            let cell = tableView.dequeueReusableCell(of: UITableViewCell.self, for: indexPath)
+            cell.textLabel?.text = ProfileRow(indexPath.row).title
+            return cell
         case .information:
-            rowTitle = InformationRow(indexPath.row).title
+            let cell = tableView.dequeueReusableCell(of: UITableViewCell.self, for: indexPath)
+            cell.textLabel?.text = InformationRow(indexPath.row).title
+            return cell
+        case .collection:
+            let demoCell = tableView.dequeueReusableCell(of: DemoTableViewCell.self, for: indexPath)
+            demoCell.collectionView.dataSource = self
+            demoCell.collectionView.register(DemoCollectionViewCell.self)
+            return demoCell
         }
-        
-        let cell = tableView.dequeueReusableCell(of: UITableViewCell.self, for: indexPath)
-        cell.textLabel?.text = rowTitle
-        return cell
     }
     
 }
@@ -80,8 +86,33 @@ extension DemoViewController: UITableViewDataSource {
 
 extension DemoViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch Section(indexPath.section) {
+        case .profile, .information:
+            return 50
+        case .collection:
+            return 110
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+}
+
+// MARK: - UICollectionViewDataSource -
+
+extension DemoViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let demoCell = collectionView.dequeueReusableCell(of: DemoCollectionViewCell.self, for: indexPath)
+        demoCell.numberLabel.text = String(indexPath.item)
+        return demoCell
     }
     
 }
