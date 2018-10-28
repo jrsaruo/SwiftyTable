@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name               = "SwiftyTable"
-  s.version            = "1.0.0"
+  s.version            = "1.1"
   s.license            = { :type => "MIT", :file => "LICENSE" }
   s.summary            = "Pure-Swift library for statically typed table components."
   s.homepage           = "https://github.com/jrsaruo/SwiftyTable"
