@@ -13,6 +13,7 @@ extension DemoViewController {
     enum Section: Int, TableSection, CaseIterable {
         case profile
         case information
+        case collection
         
         var title: String {
             switch self {
@@ -20,6 +21,8 @@ extension DemoViewController {
                 return "Profile"
             case .information:
                 return "Information"
+            case .collection:
+                return "Collection View Demo"
             }
         }
     }
