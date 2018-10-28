@@ -13,7 +13,7 @@ Pure-Swift library for statically typed table components.
 
 
 ## Requirements
-* Xcode 10
+* Xcode 10+
 * Swift 4.2+
 * iOS 10.0+
 
@@ -24,7 +24,7 @@ Pure-Swift library for statically typed table components.
 
 To integrate SwiftyTable into your Xcode project using CocoaPods, add the following line to your `Podfile` and run `pod install`.
 
-```ruby
+```
 pod 'SwiftyTable', git: 'https://github.com/jrsaruo/SwiftyTable.git'
 ```
 
@@ -41,6 +41,27 @@ Run `carthage update` to build the framework and drag the built `SwiftyTable.fra
 
 
 ## Features
+### 1. Reusable
+No need to define reuse identifiers for `UITableViewCell`, `UITableHeaderFooterView`, `UICollectionViewCell` and `UICollectionReusableView`.
+
+```swift
+class CustomCell: UITableViewCell {
+    var customProperty: String?
+}
+
+let tableView = UITableView()
+tableView.register(CustomCell.self) // NO NEED to define reuse identifier!
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(of: CustomCell.self, for: indexPath)
+    cell.customProperty = "NO NEED to use 'as! CustomCell'"
+    return cell
+}
+
+```
+
+
+### 2. Statically typed table components
 Following implementation is hard to read and will easily cause bugs.
 ```swift
 switch indexPath.section {
@@ -72,7 +93,7 @@ case .information:
 }
 ```
 
-### Easy to define table sections or rows
+#### Easy to define table sections or rows
 ```swift
 enum Section: Int, TableSection, CaseIterable {
     case profile
@@ -93,7 +114,7 @@ enum InformationRow: Int, TableRow, CaseIterable {
 }
 ```
 
-### Readable and Flexible
+#### Readable and Flexible
 ```swift
 extension ViewController: UITableViewDataSource {
 
@@ -111,7 +132,7 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell identifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(of: UITableViewCell.self, for: indexPath)
 
         switch Section(indexPath.section) { // default case is unnecessary.
         case .profile:
