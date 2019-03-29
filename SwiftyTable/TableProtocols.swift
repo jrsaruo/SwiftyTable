@@ -107,3 +107,6 @@ private extension TableComponent {
     }
     
 }
+
+public typealias CollectionSection = TableSection
+public typealias CollectionItem = TableRow
