@@ -26,10 +26,10 @@ class DemoViewController: UIViewController {
         self.tableView.register(UITableViewCell.self)
         self.tableView.register(DemoTableViewCell.self)
         
-        setupViews()
+        setUpViews()
     }
     
-    private func setupViews() {
+    private func setUpViews() {
         self.title = "SwiftyTable Demo"
         self.view.backgroundColor = .white
         
