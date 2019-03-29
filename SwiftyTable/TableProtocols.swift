@@ -34,7 +34,7 @@ public extension TableSection {
     /// Creates a new instance from the specified section number.
     ///
     /// - Parameter section: table section number to use for the new instance.
-    public init(_ section: Int) {
+    init(_ section: Int) {
         self.init(value: section)
     }
     
@@ -71,7 +71,7 @@ public extension TableRow {
     /// Creates a new instance with specified row number.
     ///
     /// - Parameter row: table row number to use for the new instance.
-    public init(_ row: Int) {
+    init(_ row: Int) {
         self.init(value: row)
     }
     
@@ -90,7 +90,7 @@ public protocol TableComponent: RawRepresentable where Self.RawValue == Int {
 public extension TableComponent where Self: CaseIterable {
     
     @inlinable
-    public static var count: Int {
+    static var count: Int {
         return self.allCases.count
     }
     

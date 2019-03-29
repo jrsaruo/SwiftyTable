@@ -12,7 +12,7 @@ public extension UITableView {
     // MARK: - UITableViewCell
     
     /// Registers a class for use in creating new table cells.
-    public func register<Cell: UITableViewCell>(_ cellClass: Cell.Type) {
+    func register<Cell: UITableViewCell>(_ cellClass: Cell.Type) {
         register(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier)
     }
     
@@ -33,7 +33,7 @@ public extension UITableView {
     ///         return cell
     ///     }
     ///
-    public func dequeueReusableCell<Cell: UITableViewCell>(of cellClass: Cell.Type, for indexPath: IndexPath) -> Cell {
+    func dequeueReusableCell<Cell: UITableViewCell>(of cellClass: Cell.Type, for indexPath: IndexPath) -> Cell {
         guard let cell = dequeueReusableCell(withIdentifier: cellClass.reuseIdentifier, for: indexPath) as? Cell else {
             assertionFailure("\(Cell.self) is not registered. Please confirm cell registration.")
             register(cellClass.self)
@@ -45,14 +45,14 @@ public extension UITableView {
     // MARK: - HeaderFooter
     
     /// Registers a class for use in creating new table header or footer views.
-    public func register<HeaderFooter: UITableViewHeaderFooterView>(_ headerFooterClass: HeaderFooter.Type) {
+    func register<HeaderFooter: UITableViewHeaderFooterView>(_ headerFooterClass: HeaderFooter.Type) {
         register(headerFooterClass, forHeaderFooterViewReuseIdentifier: headerFooterClass.reuseIdentifier)
     }
     
     /// Returns a reusable header or footer view for the specified type.
     ///
     /// To use this method, you need to register header or footer view by using register(_ headerFooterClass:) method.
-    public func dequeueReusableHeaderFooterView<HeaderFooter: UITableViewHeaderFooterView>(of headerFooterClass: HeaderFooter.Type) -> HeaderFooter? {
+    func dequeueReusableHeaderFooterView<HeaderFooter: UITableViewHeaderFooterView>(of headerFooterClass: HeaderFooter.Type) -> HeaderFooter? {
         guard let view = dequeueReusableHeaderFooterView(withIdentifier: headerFooterClass.reuseIdentifier) else { return nil }
         guard let headerFooter = view as? HeaderFooter else {
             assertionFailure("\(HeaderFooter.self) is not registered. Please confirm header/footer registration.")
