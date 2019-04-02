@@ -69,7 +69,7 @@ public extension UICollectionView {
                                                     for: indexPath)
         guard let supplementaryView = view as? View else {
             assertionFailure("\(View.self) is not registered. Please confirm supplementary-view registration.")
-            register(viewClass, forSupplementaryViewOfKind: viewClass.reuseIdentifier)
+            register(viewClass, forSupplementaryViewOfKind: elementKind)
             return viewClass.init()
         }
         return supplementaryView
