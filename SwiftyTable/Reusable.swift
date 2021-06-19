@@ -26,7 +26,7 @@ import UIKit
 ///         return cell
 ///     }
 ///
-public protocol Reusable: class {
+public protocol Reusable: AnyObject {
     
     /// A string identifying the object to be reused. Default value is class name with module prefix.
     static var reuseIdentifier: String { get }
