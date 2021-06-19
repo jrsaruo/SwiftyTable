@@ -60,6 +60,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A027B3B267EA92400C6FDCB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5A027B3C267EA93C00C6FDCB /* SwiftyTable */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		5A027B3C267EA93C00C6FDCB /* SwiftyTable */ = {
+			isa = PBXGroup;
+			children = (
+				5A392BC5215A8DEA003E4814 /* TableProtocols.swift */,
+				5A1EB3CB21851D4000211A9C /* Reusable.swift */,
+				5A392BC9215A8E21003E4814 /* Extensions */,
+			);
+			path = SwiftyTable;
+			sourceTree = "<group>";
+		};
 		5A392B74215A739A003E4814 = {
 			isa = PBXGroup;
 			children = (
@@ -81,9 +99,7 @@
 		5A392B80215A739A003E4814 /* SwiftyTable */ = {
 			isa = PBXGroup;
 			children = (
-				5A392BC5215A8DEA003E4814 /* TableProtocols.swift */,
-				5A1EB3CB21851D4000211A9C /* Reusable.swift */,
-				5A392BC9215A8E21003E4814 /* Extensions */,
+				5A027B3B267EA92400C6FDCB /* Sources */,
 				5A392B81215A739A003E4814 /* SwiftyTable.h */,
 				5A392B82215A739A003E4814 /* Info.plist */,
 			);
