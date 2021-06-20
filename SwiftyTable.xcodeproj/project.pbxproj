@@ -6,27 +6,12 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		"SwiftyTable::SwiftyTablePackageTests::ProductTarget" /* SwiftyTablePackageTests */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_46 /* Build configuration list for PBXAggregateTarget "SwiftyTablePackageTests" */;
-			buildPhases = (
-			);
-			dependencies = (
-				OBJ_49 /* PBXTargetDependency */,
-			);
-			name = SwiftyTablePackageTests;
-			productName = SwiftyTablePackageTests;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		OBJ_33 /* IndexPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* IndexPath+Extension.swift */; };
 		OBJ_34 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* UICollectionView+Extension.swift */; };
 		OBJ_35 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* UITableView+Extension.swift */; };
 		OBJ_36 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Reusable.swift */; };
 		OBJ_37 /* TableProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* TableProtocols.swift */; };
-		OBJ_44 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_55 /* SwiftyTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* SwiftyTableTests.swift */; };
 		OBJ_57 /* SwiftyTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyTable::SwiftyTable::Product" /* SwiftyTable.framework */; };
 /* End PBXBuildFile section */
@@ -38,13 +23,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftyTable::SwiftyTable";
 			remoteInfo = SwiftyTable;
-		};
-		5A6A0E59267EB66000E3B16B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "SwiftyTable::SwiftyTableTests";
-			remoteInfo = SwiftyTableTests;
 		};
 		5A6A0E5E267EB71100E3B16B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -176,20 +154,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		"SwiftyTable::SwiftPMPackageDescription" /* SwiftyTablePackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_40 /* Build configuration list for PBXNativeTarget "SwiftyTablePackageDescription" */;
-			buildPhases = (
-				OBJ_43 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SwiftyTablePackageDescription;
-			productName = SwiftyTablePackageDescription;
-			productType = "com.apple.product-type.framework";
-		};
 		"SwiftyTable::SwiftyTable" /* SwiftyTable */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_29 /* Build configuration list for PBXNativeTarget "SwiftyTable" */;
@@ -251,8 +215,6 @@
 			projectRoot = "";
 			targets = (
 				"SwiftyTable::SwiftyTable" /* SwiftyTable */,
-				"SwiftyTable::SwiftPMPackageDescription" /* SwiftyTablePackageDescription */,
-				"SwiftyTable::SwiftyTablePackageTests::ProductTarget" /* SwiftyTablePackageTests */,
 				"SwiftyTable::SwiftyTableTests" /* SwiftyTableTests */,
 			);
 		};
@@ -281,14 +243,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_43 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_44 /* Package.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		OBJ_54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
@@ -300,11 +254,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_49 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "SwiftyTable::SwiftyTableTests" /* SwiftyTableTests */;
-			targetProxy = 5A6A0E59267EB66000E3B16B /* PBXContainerItemProxy */;
-		};
 		OBJ_58 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftyTable::SwiftyTable" /* SwiftyTable */;
@@ -428,36 +377,6 @@
 			};
 			name = Release;
 		};
-		OBJ_41 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -package-description-version 5.3.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		OBJ_42 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -package-description-version 5.3.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		OBJ_47 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		OBJ_48 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
 		OBJ_52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -527,24 +446,6 @@
 			buildConfigurations = (
 				OBJ_30 /* Debug */,
 				OBJ_31 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_40 /* Build configuration list for PBXNativeTarget "SwiftyTablePackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_41 /* Debug */,
-				OBJ_42 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_46 /* Build configuration list for PBXAggregateTarget "SwiftyTablePackageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_47 /* Debug */,
-				OBJ_48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
