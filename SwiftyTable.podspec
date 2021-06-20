@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                    = "SwiftyTable"
-  s.version                 = "1.1"
+  s.version                 = "1.2.0"
   s.license                 = { :type => "MIT", :file => "LICENSE" }
   s.summary                 = "Pure-Swift library for statically typed table components."
   s.homepage                = "https://github.com/jrsaruo/SwiftyTable"
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   
   s.swift_version           = '5.0'
 
-  s.source                  = { :git => "https://github.com/jrsaruo/SwiftyTable.git", :tag => "v#{s.version}" }
+  s.source                  = { :git => "https://github.com/jrsaruo/SwiftyTable.git", :tag => s.version }
   s.source_files            = "Sources/**/*.swift"
 
   s.requires_arc            = true
