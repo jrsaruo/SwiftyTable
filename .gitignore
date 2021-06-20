@@ -2,6 +2,7 @@
 /.build
 /Packages
 /*.xcodeproj
+!/*.xcodeproj/xcshareddata/xcschemes
 xcuserdata/
 DerivedData/
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
