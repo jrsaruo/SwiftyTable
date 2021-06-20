@@ -11,16 +11,15 @@ import XCTest
 class SwiftyTableTests: XCTestCase {
     
     private enum Section: Int, TableSection, CaseIterable {
-        case zero
-        case one
-        case two
+        case zero, one, two
     }
     
     private enum Row: Int, TableRow, CaseIterable {
-        case zero
-        case one
-        case two
-        case three
+        case zero, one, two, three
+    }
+    
+    private enum Item: Int, CollectionItem, CaseIterable {
+        case zero, one, two, three
     }
     
     // MARK: -
@@ -65,6 +64,10 @@ class SwiftyTableTests: XCTestCase {
         XCTAssertEqual(IndexPath(row: 1, section: 2), IndexPath(row: 1, section: Section.two))
         XCTAssertEqual(IndexPath(row: 1, section: 2), IndexPath(row: Row.one, section: 2))
         XCTAssertEqual(IndexPath(row: 1, section: 2), IndexPath(row: Row.one, section: Section.two))
+        
+        XCTAssertEqual(IndexPath(item: 1, section: 2), IndexPath(item: 1, section: Section.two))
+        XCTAssertEqual(IndexPath(item: 1, section: 2), IndexPath(item: Item.one, section: 2))
+        XCTAssertEqual(IndexPath(item: 1, section: 2), IndexPath(item: Item.one, section: Section.two))
     }
     
 }

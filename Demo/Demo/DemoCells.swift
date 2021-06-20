@@ -31,14 +31,14 @@ final class DemoTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setup()
+        setUp()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setup() {
+    private func setUp() {
         self.contentView.addSubview(self.collectionView)
     }
     
@@ -67,14 +67,14 @@ final class DemoCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setup()
+        setUp()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setup() {
+    private func setUp() {
         self.backgroundColor = #colorLiteral(red: 0.2668387294, green: 0.7654328942, blue: 1, alpha: 1)
         self.layer.cornerRadius = 5
         

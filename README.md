@@ -1,6 +1,6 @@
 # SwiftyTable
-![iOS 10.0+](https://img.shields.io/badge/platform-iOS%2010%2B-blue.svg?style=flat)
-![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)
+![iOS 12.0+](https://img.shields.io/badge/platform-iOS%2012%2B-blue.svg?style=flat)
+![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)
 ![Cocoapods Compatible](https://img.shields.io/cocoapods/v/SwiftyTable.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -14,15 +14,32 @@ Pure-Swift library for statically typed table components.
 
 ## Requirements
 * Xcode 10+
-* Swift 4.2+
-* iOS 10.0+
-
+* Swift 5.0+
+* iOS 12.0+
 
 ## Installation
+
+### Swift Package Manager
+
+To use the `SwiftyTable` library in a SwiftPM project, add the following line to the dependencies in your `Package.swift` file:
+
+```swift
+.package(url: "https://github.com/jrsaruo/SwiftyTable", from "1.2.0"),
+```
+
+and add `SwiftyTable` as a dependency for your target:
+
+```swift
+.target(name: "<target>", dependencies: [
+    .product(name: "SwiftyTable", package: "SwiftyTable"),
+    // other dependencies
+]),
+```
+
 ### CocoaPods
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
-To integrate SwiftyTable into your Xcode project using CocoaPods, add the following line to your `Podfile` and run `pod install`.
+To integrate `SwiftyTable` into your Xcode project using CocoaPods, add the following line to your `Podfile` and run `pod install`.
 
 ```
 pod 'SwiftyTable', git: 'https://github.com/jrsaruo/SwiftyTable.git'
@@ -31,7 +48,7 @@ pod 'SwiftyTable', git: 'https://github.com/jrsaruo/SwiftyTable.git'
 ### Carthage
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
 
-To integrate SwiftyTable into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate `SwiftyTable` into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
 github "jrsaruo/SwiftyTable"
