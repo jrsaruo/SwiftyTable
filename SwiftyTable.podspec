@@ -1,6 +1,9 @@
+version = ENV["LIBRARY_VERSION"]
+exit 1 if version.to_s.empty?
+
 Pod::Spec.new do |s|
   s.name                    = "SwiftyTable"
-  s.version                 = "1.2.0"
+  s.version                 = version
   s.license                 = { :type => "MIT", :file => "LICENSE" }
   s.summary                 = "Pure-Swift library for statically typed table components."
   s.homepage                = "https://github.com/jrsaruo/SwiftyTable"
