@@ -25,5 +25,8 @@ let package = Package(
         .target(
             name: "SwiftyTable",
             dependencies: []),
+        .testTarget(
+            name: "SwiftyTableTests",
+            dependencies: ["SwiftyTable"])
     ]
 )
