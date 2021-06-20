@@ -2,6 +2,7 @@
 /.build
 /Packages
 /*.xcodeproj
+!/*.xcodeproj/*.plist
 !/*.xcodeproj/xcshareddata/xcschemes
 xcuserdata/
 DerivedData/
