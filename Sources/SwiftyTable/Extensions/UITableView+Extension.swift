@@ -50,9 +50,9 @@ public extension UITableView {
     /// Returns a reusable header or footer view for the specified type.
     ///
     /// To use this method, you need to register header or footer view by using `register(_ headerFooterClass:)` method in advance.
-    func dequeueReusableHeaderFooterView<HeaderFooter: UITableViewHeaderFooterView>(of headerFooterClass: HeaderFooter.Type) -> HeaderFooter? {
-        guard let view = dequeueReusableHeaderFooterView(withIdentifier: headerFooterClass.reuseIdentifier) else { return nil }
-        guard let headerFooter = view as? HeaderFooter else {
+    func dequeueReusableHeaderFooterView<HeaderFooter: UITableViewHeaderFooterView>(of headerFooterClass: HeaderFooter.Type) -> HeaderFooter {
+        guard let view = dequeueReusableHeaderFooterView(withIdentifier: headerFooterClass.reuseIdentifier),
+              let headerFooter = view as? HeaderFooter else {
             preconditionFailure("\(HeaderFooter.self) is not registered. Please confirm header/footer registration.")
         }
         return headerFooter
