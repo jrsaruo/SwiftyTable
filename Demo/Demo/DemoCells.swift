@@ -39,13 +39,13 @@ final class DemoTableViewCell: UITableViewCell {
     }
     
     private func setUp() {
-        self.contentView.addSubview(self.collectionView)
+        contentView.addSubview(collectionView)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.collectionView.frame = self.contentView.bounds
+        collectionView.frame = contentView.bounds
     }
     
 }
@@ -75,16 +75,16 @@ final class DemoCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUp() {
-        self.backgroundColor = #colorLiteral(red: 0.2668387294, green: 0.7654328942, blue: 1, alpha: 1)
-        self.layer.cornerRadius = 5
+        backgroundColor = #colorLiteral(red: 0.2668387294, green: 0.7654328942, blue: 1, alpha: 1)
+        layer.cornerRadius = 5
         
-        self.contentView.addSubview(self.numberLabel)
+        contentView.addSubview(numberLabel)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.numberLabel.frame = self.contentView.bounds
+        numberLabel.frame = contentView.bounds
     }
     
 }
