@@ -7,10 +7,10 @@
 
 import UIKit
 
-/// A type that provides reusaIdentifier.
+/// A type that provides the reuse identifier.
 ///
-/// UITableViewCell, UITableHeaderFooterView and UICollectionViewCell conform to this protocol.
-/// It enables to omit reuse identifier definition for cells.
+/// `UITableViewCell`, `UITableHeaderFooterView` and `UICollectionViewCell` conform to this protocol.
+/// It enables to omit the reuse identifier definition for cells.
 ///
 ///     class CustomCell: UITableViewCell { // UITableViewCell conforms to Reusable.
 ///         var someProperty: String?
@@ -37,7 +37,6 @@ public extension Reusable {
     static var reuseIdentifier: String {
         return NSStringFromClass(self) // class name with module prefix
     }
-    
 }
 
 extension UITableViewCell: Reusable {}

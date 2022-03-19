@@ -15,14 +15,14 @@ final class DemoTableViewCell: UITableViewCell {
     let collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: 80, height: 80)
-        flowLayout.minimumLineSpacing = 15
-        flowLayout.minimumInteritemSpacing = 15
+        flowLayout.minimumLineSpacing = 16
+        flowLayout.minimumInteritemSpacing = 16
         flowLayout.scrollDirection = .horizontal
+        flowLayout.sectionInsetReference = .fromLayoutMargins
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.preservesSuperviewLayoutMargins = true
         collectionView.backgroundColor = .white
-        collectionView.contentInset.left = 15
-        collectionView.contentInset.right = 15
         return collectionView
     }()
     
@@ -30,24 +30,23 @@ final class DemoTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         setUp()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setUp()
     }
     
     private func setUp() {
-        self.contentView.addSubview(self.collectionView)
+        contentView.addSubview(collectionView)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.collectionView.frame = self.contentView.bounds
+        collectionView.frame = contentView.bounds
     }
-    
 }
 
 // MARK: - DemoCollectionViewCell -
@@ -75,16 +74,15 @@ final class DemoCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUp() {
-        self.backgroundColor = #colorLiteral(red: 0.2668387294, green: 0.7654328942, blue: 1, alpha: 1)
-        self.layer.cornerRadius = 5
+        backgroundColor = #colorLiteral(red: 0.2668387294, green: 0.7654328942, blue: 1, alpha: 1)
+        layer.cornerRadius = 5
         
-        self.contentView.addSubview(self.numberLabel)
+        contentView.addSubview(numberLabel)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.numberLabel.frame = self.contentView.bounds
+        numberLabel.frame = contentView.bounds
     }
-    
 }

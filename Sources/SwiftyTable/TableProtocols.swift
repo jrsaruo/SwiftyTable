@@ -9,11 +9,10 @@
 
 /// A type that represents table section.
 ///
-/// Types that conform to the TableSection protocol are typically enumerations assigned integer raw values.
-/// **Raw values must correspond to section numbers.**
-/// If the type conforms to CaseIterable, you don't need to implement *count* property.
+/// Types that conform to this protocol are typically enumerations assigned integer raw values.
+/// If the type conforms to `CaseIterable`, you don't need to implement `count` property.
 ///
-/// For example, the Section enumeration declared in this example conforms to TableSection and CaseIterable.
+/// For example, the Section enumeration declared in this example conforms to `TableSection` and `CaseIterable`.
 ///
 ///     enum Section: Int, TableSection, CaseIterable {
 ///         case profile
@@ -27,6 +26,7 @@
 ///         return Section.count // Returns 2.
 ///     }
 ///
+/// - Note: The raw value must be the same as its section number.
 public protocol TableSection: TableComponent {}
 
 public extension TableSection {
@@ -37,18 +37,16 @@ public extension TableSection {
     init(_ section: Int) {
         self.init(value: section)
     }
-    
 }
 
 // MARK: - TableRow -
 
-/// A type that represents table row. Its raw value must be the same as its row number.
+/// A type that represents table row.
 ///
-/// Types that conform to the TableRow protocol are typically enumerations assigned integer raw values.
-/// **Raw values must correspond to row numbers.**
-/// If the type conforms to CaseIterable, you don't need to implement *count* property.
+/// Types that conform to this protocol are typically enumerations assigned integer raw values.
+/// If the type conforms to `CaseIterable`, you don't need to implement `count` property.
 ///
-/// For example, the ProfileRow enumeration declared in this example conforms to TableRow and CaseIterable.
+/// For example, the `ProfileRow` enumeration declared in this example conforms to `TableRow` and `CaseIterable`.
 ///
 ///     enum ProfileRow: Int, TableRow, CaseIterable {
 ///         case username
@@ -64,6 +62,7 @@ public extension TableSection {
 ///         return ProfileRow.count // Returns 3.
 ///     }
 ///
+/// - Note: The raw value must be the same as its row number.
 public protocol TableRow: TableComponent {}
 
 public extension TableRow {
@@ -74,38 +73,33 @@ public extension TableRow {
     init(_ row: Int) {
         self.init(value: row)
     }
-    
 }
 
 // MARK: - TableComponent -
 
 public protocol TableComponent: RawRepresentable where Self.RawValue == Int {
     
-    /// The number of table components. If the type conforms to CaseIterable, this property returns allCases.count by default.
-    /// For example, you can use this property in *numberOfSections(in tableView: UITableView) -> Int* method of UITableViewDataSource.
+    /// The number of table components.
+    ///
+    /// You can use this property in `numberOfSections(in:)` method of `UITableViewDataSource`.
+    /// If the type conforms to `CaseIterable`, this property returns `allCases.count` by default.
     static var count: Int { get }
-    
 }
 
 public extension TableComponent where Self: CaseIterable {
     
     @inlinable
-    static var count: Int {
-        return self.allCases.count
-    }
-    
+    static var count: Int { allCases.count }
 }
 
 private extension TableComponent {
     
     init(value: Int) {
-        let component = Self.init(rawValue: value) ?? {
-            assertionFailure("Undefined \(Self.self). Please confirm implementation of 'Self.count' property and raw values.")
-            return Self.init(rawValue: 0)!
-            }()
+        guard let component = Self.init(rawValue: value) else {
+            preconditionFailure("Undefined \(Self.self). Please confirm implementation of `Self.count` property and raw values.")
+        }
         self = component
     }
-    
 }
 
 public typealias CollectionSection = TableSection

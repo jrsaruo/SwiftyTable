@@ -12,13 +12,14 @@ public extension UICollectionView {
     // MARK: - UICollectionViewCell
     
     /// Register a class for use in creating new collection view cells.
+    @inlinable
     func register<Cell: UICollectionViewCell>(_ cellClass: Cell.Type) {
         register(cellClass, forCellWithReuseIdentifier: cellClass.reuseIdentifier)
     }
     
     /// Returns a reusable collection-view cell object for the specified type.
     ///
-    /// To use this method, you need to register cell by using register(_ cellClass:) method.
+    /// To use this method, you need to register cell by using `register(_ cellClass:)` method in advance.
     ///
     ///     class CustomCell: UICollectionViewCell {
     ///         var someProperty: String?
@@ -36,9 +37,7 @@ public extension UICollectionView {
     func dequeueReusableCell<Cell: UICollectionViewCell>(of cellClass: Cell.Type,
                                                          for indexPath: IndexPath) -> Cell {
         guard let cell = dequeueReusableCell(withReuseIdentifier: cellClass.reuseIdentifier, for: indexPath) as? Cell else {
-            assertionFailure("\(Cell.self) is not registered. Please confirm cell registration.")
-            register(cellClass.self)
-            return cellClass.init()
+            preconditionFailure("\(Cell.self) is not registered. Please confirm cell registration.")
         }
         return cell
     }
@@ -50,6 +49,7 @@ public extension UICollectionView {
     /// - Parameters:
     ///   - viewClass: The class to use for the supplementary view.
     ///   - elementKind: The kind of supplementary view to create. This value is defined by the layout object.
+    @inlinable
     func register<View: UICollectionReusableView>(_ viewClass: View.Type,
                                                   forSupplementaryViewOf elementKind: ElementKind) {
         register(viewClass,
@@ -70,13 +70,10 @@ public extension UICollectionView {
                                                     withReuseIdentifier: viewClass.reuseIdentifier,
                                                     for: indexPath)
         guard let supplementaryView = view as? View else {
-            assertionFailure("\(View.self) is not registered. Please confirm supplementary-view registration.")
-            register(viewClass, forSupplementaryViewOf: elementKind)
-            return viewClass.init()
+            preconditionFailure("\(View.self) is not registered. Please confirm supplementary-view registration.")
         }
         return supplementaryView
     }
-    
 }
 
 public extension UICollectionView {
@@ -91,5 +88,4 @@ public extension UICollectionView {
         public static let sectionHeader = ElementKind(rawValue: UICollectionView.elementKindSectionHeader)
         public static let sectionFooter = ElementKind(rawValue: UICollectionView.elementKindSectionFooter)
     }
-    
 }

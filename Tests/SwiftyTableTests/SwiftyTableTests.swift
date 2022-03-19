@@ -70,4 +70,35 @@ class SwiftyTableTests: XCTestCase {
         XCTAssertEqual(IndexPath(item: 1, section: 2), IndexPath(item: Item.one, section: Section.two))
     }
     
+    // MARK: -
+    
+    func testRegisterAndReuse() {
+        XCTContext.runActivity(named: "UITableView") { _ in
+            let tableView = UITableView()
+            XCTContext.runActivity(named: "Reuse cells") { _ in
+                tableView.register(UITableViewCell.self)
+                let _ = tableView.dequeueReusableCell(of: UITableViewCell.self,
+                                                      for: IndexPath(row: 0, section: 0))
+            }
+            XCTContext.runActivity(named: "Reuse header/footer views") { _ in
+                tableView.register(UITableViewHeaderFooterView.self)
+                let _ = tableView.dequeueReusableHeaderFooterView(of: UITableViewHeaderFooterView.self)
+            }
+        }
+        XCTContext.runActivity(named: "UICollectionView") { _ in
+            let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
+            XCTContext.runActivity(named: "Reuse cells") { _ in
+                collectionView.register(UICollectionViewCell.self)
+                let _ = collectionView.dequeueReusableCell(of: UICollectionViewCell.self,
+                                                           for: IndexPath(row: 0, section: 0))
+            }
+            XCTContext.runActivity(named: "Reuse supplementary views") { _ in
+                collectionView.register(UICollectionReusableView.self,
+                                        forSupplementaryViewOf: .sectionHeader)
+                let _ = collectionView.dequeueReusableSupplementaryView(UICollectionReusableView.self,
+                                                                        of: .sectionHeader,
+                                                                        for: IndexPath(row: 0, section: 0))
+            }
+        }
+    }
 }
