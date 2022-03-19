@@ -12,6 +12,7 @@ public extension UITableView {
     // MARK: - UITableViewCell
     
     /// Registers a class for use in creating new table cells.
+    @inlinable
     func register<Cell: UITableViewCell>(_ cellClass: Cell.Type) {
         register(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier)
     }
@@ -43,6 +44,7 @@ public extension UITableView {
     // MARK: - HeaderFooter
     
     /// Registers a class for use in creating new table header or footer views.
+    @inlinable
     func register<HeaderFooter: UITableViewHeaderFooterView>(_ headerFooterClass: HeaderFooter.Type) {
         register(headerFooterClass, forHeaderFooterViewReuseIdentifier: headerFooterClass.reuseIdentifier)
     }

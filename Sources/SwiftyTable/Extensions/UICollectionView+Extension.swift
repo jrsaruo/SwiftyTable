@@ -12,6 +12,7 @@ public extension UICollectionView {
     // MARK: - UICollectionViewCell
     
     /// Register a class for use in creating new collection view cells.
+    @inlinable
     func register<Cell: UICollectionViewCell>(_ cellClass: Cell.Type) {
         register(cellClass, forCellWithReuseIdentifier: cellClass.reuseIdentifier)
     }
@@ -48,6 +49,7 @@ public extension UICollectionView {
     /// - Parameters:
     ///   - viewClass: The class to use for the supplementary view.
     ///   - elementKind: The kind of supplementary view to create. This value is defined by the layout object.
+    @inlinable
     func register<View: UICollectionReusableView>(_ viewClass: View.Type,
                                                   forSupplementaryViewOf elementKind: ElementKind) {
         register(viewClass,
