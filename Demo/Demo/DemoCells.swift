@@ -15,8 +15,8 @@ final class DemoTableViewCell: UITableViewCell {
     let collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: 80, height: 80)
-        flowLayout.minimumLineSpacing = 15
-        flowLayout.minimumInteritemSpacing = 15
+        flowLayout.minimumLineSpacing = 16
+        flowLayout.minimumInteritemSpacing = 16
         flowLayout.scrollDirection = .horizontal
         flowLayout.sectionInsetReference = .fromLayoutMargins
         
