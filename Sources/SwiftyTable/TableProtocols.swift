@@ -101,10 +101,9 @@ public extension TableComponent where Self: CaseIterable {
 private extension TableComponent {
     
     init(value: Int) {
-        let component = Self.init(rawValue: value) ?? {
-            assertionFailure("Undefined \(Self.self). Please confirm implementation of 'Self.count' property and raw values.")
-            return Self.init(rawValue: 0)!
-            }()
+        guard let component = Self.init(rawValue: value) else {
+            preconditionFailure("Undefined \(Self.self). Please confirm implementation of `Self.count` property and raw values.")
+        }
         self = component
     }
     
