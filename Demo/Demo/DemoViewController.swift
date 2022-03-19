@@ -21,20 +21,20 @@ class DemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        self.tableView.register(UITableViewCell.self)
-        self.tableView.register(DemoTableViewCell.self)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self)
+        tableView.register(DemoTableViewCell.self)
         
         setUpViews()
     }
     
     private func setUpViews() {
-        self.title = "SwiftyTable Demo"
-        self.view.backgroundColor = .white
+        title = "SwiftyTable Demo"
+        view.backgroundColor = .white
         
-        self.tableView.frame = self.view.bounds
-        self.view.addSubview(self.tableView)
+        tableView.frame = view.bounds
+        view.addSubview(tableView)
     }
     
 }
