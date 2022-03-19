@@ -36,9 +36,7 @@ public extension UICollectionView {
     func dequeueReusableCell<Cell: UICollectionViewCell>(of cellClass: Cell.Type,
                                                          for indexPath: IndexPath) -> Cell {
         guard let cell = dequeueReusableCell(withReuseIdentifier: cellClass.reuseIdentifier, for: indexPath) as? Cell else {
-            assertionFailure("\(Cell.self) is not registered. Please confirm cell registration.")
-            register(cellClass.self)
-            return cellClass.init()
+            preconditionFailure("\(Cell.self) is not registered. Please confirm cell registration.")
         }
         return cell
     }
@@ -70,9 +68,7 @@ public extension UICollectionView {
                                                     withReuseIdentifier: viewClass.reuseIdentifier,
                                                     for: indexPath)
         guard let supplementaryView = view as? View else {
-            assertionFailure("\(View.self) is not registered. Please confirm supplementary-view registration.")
-            register(viewClass, forSupplementaryViewOf: elementKind)
-            return viewClass.init()
+            preconditionFailure("\(View.self) is not registered. Please confirm supplementary-view registration.")
         }
         return supplementaryView
     }

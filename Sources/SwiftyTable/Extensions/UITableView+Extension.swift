@@ -35,9 +35,7 @@ public extension UITableView {
     ///
     func dequeueReusableCell<Cell: UITableViewCell>(of cellClass: Cell.Type, for indexPath: IndexPath) -> Cell {
         guard let cell = dequeueReusableCell(withIdentifier: cellClass.reuseIdentifier, for: indexPath) as? Cell else {
-            assertionFailure("\(Cell.self) is not registered. Please confirm cell registration.")
-            register(cellClass.self)
-            return cellClass.init(style: .default, reuseIdentifier: cellClass.reuseIdentifier)
+            preconditionFailure("\(Cell.self) is not registered. Please confirm cell registration.")
         }
         return cell
     }
@@ -55,9 +53,7 @@ public extension UITableView {
     func dequeueReusableHeaderFooterView<HeaderFooter: UITableViewHeaderFooterView>(of headerFooterClass: HeaderFooter.Type) -> HeaderFooter? {
         guard let view = dequeueReusableHeaderFooterView(withIdentifier: headerFooterClass.reuseIdentifier) else { return nil }
         guard let headerFooter = view as? HeaderFooter else {
-            assertionFailure("\(HeaderFooter.self) is not registered. Please confirm header/footer registration.")
-            register(headerFooterClass.self)
-            return headerFooterClass.init(reuseIdentifier: headerFooterClass.reuseIdentifier)
+            preconditionFailure("\(HeaderFooter.self) is not registered. Please confirm header/footer registration.")
         }
         return headerFooter
     }
