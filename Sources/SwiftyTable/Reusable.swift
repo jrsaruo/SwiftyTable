@@ -37,7 +37,6 @@ public extension Reusable {
     static var reuseIdentifier: String {
         return NSStringFromClass(self) // class name with module prefix
     }
-    
 }
 
 extension UITableViewCell: Reusable {}

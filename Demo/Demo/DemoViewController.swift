@@ -79,7 +79,6 @@ extension DemoViewController: UITableViewDataSource {
             return demoCell
         }
     }
-    
 }
 
 // MARK: - UITableViewDelegate -
@@ -98,7 +97,6 @@ extension DemoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }
 
 // MARK: - UICollectionViewDataSource -
@@ -114,5 +112,4 @@ extension DemoViewController: UICollectionViewDataSource {
         demoCell.numberLabel.text = String(indexPath.item)
         return demoCell
     }
-    
 }

@@ -38,5 +38,4 @@ public extension IndexPath {
     init<Item: CollectionItem>(item: Item, section: Int) {
         self.init(item: item.rawValue, section: section)
     }
-    
 }

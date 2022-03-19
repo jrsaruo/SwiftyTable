@@ -37,7 +37,6 @@ public extension TableSection {
     init(_ section: Int) {
         self.init(value: section)
     }
-    
 }
 
 // MARK: - TableRow -
@@ -74,7 +73,6 @@ public extension TableRow {
     init(_ row: Int) {
         self.init(value: row)
     }
-    
 }
 
 // MARK: - TableComponent -
@@ -86,14 +84,12 @@ public protocol TableComponent: RawRepresentable where Self.RawValue == Int {
     /// You can use this property in `numberOfSections(in:)` method of `UITableViewDataSource`.
     /// If the type conforms to `CaseIterable`, this property returns `allCases.count` by default.
     static var count: Int { get }
-    
 }
 
 public extension TableComponent where Self: CaseIterable {
     
     @inlinable
     static var count: Int { allCases.count }
-    
 }
 
 private extension TableComponent {
@@ -104,7 +100,6 @@ private extension TableComponent {
         }
         self = component
     }
-    
 }
 
 public typealias CollectionSection = TableSection

@@ -47,7 +47,6 @@ final class DemoTableViewCell: UITableViewCell {
         
         collectionView.frame = contentView.bounds
     }
-    
 }
 
 // MARK: - DemoCollectionViewCell -
@@ -86,5 +85,4 @@ final class DemoCollectionViewCell: UICollectionViewCell {
         
         numberLabel.frame = contentView.bounds
     }
-    
 }
