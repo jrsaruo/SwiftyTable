@@ -18,7 +18,7 @@ public extension UITableView {
     
     /// Returns a reusable table-view cell object for the specified type and adds it to the table.
     ///
-    /// To use this method, you need to register cell by using register(_ cellClass:) method.
+    /// To use this method, you need to register cell by using `register(_ cellClass:)` method in advance.
     ///
     ///     class CustomCell: UITableViewCell {
     ///         var someProperty: String?
@@ -51,7 +51,7 @@ public extension UITableView {
     
     /// Returns a reusable header or footer view for the specified type.
     ///
-    /// To use this method, you need to register header or footer view by using register(_ headerFooterClass:) method.
+    /// To use this method, you need to register header or footer view by using `register(_ headerFooterClass:)` method in advance.
     func dequeueReusableHeaderFooterView<HeaderFooter: UITableViewHeaderFooterView>(of headerFooterClass: HeaderFooter.Type) -> HeaderFooter? {
         guard let view = dequeueReusableHeaderFooterView(withIdentifier: headerFooterClass.reuseIdentifier) else { return nil }
         guard let headerFooter = view as? HeaderFooter else {
