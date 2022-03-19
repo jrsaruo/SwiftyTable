@@ -18,11 +18,11 @@ final class DemoTableViewCell: UITableViewCell {
         flowLayout.minimumLineSpacing = 15
         flowLayout.minimumInteritemSpacing = 15
         flowLayout.scrollDirection = .horizontal
+        flowLayout.sectionInsetReference = .fromLayoutMargins
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.preservesSuperviewLayoutMargins = true
         collectionView.backgroundColor = .white
-        collectionView.contentInset.left = 15
-        collectionView.contentInset.right = 15
         return collectionView
     }()
     
