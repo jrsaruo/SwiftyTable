@@ -92,9 +92,7 @@ public protocol TableComponent: RawRepresentable where Self.RawValue == Int {
 public extension TableComponent where Self: CaseIterable {
     
     @inlinable
-    static var count: Int {
-        return self.allCases.count
-    }
+    static var count: Int { allCases.count }
     
 }
 
