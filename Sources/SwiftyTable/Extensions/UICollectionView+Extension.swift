@@ -74,7 +74,6 @@ public extension UICollectionView {
         }
         return supplementaryView
     }
-    
 }
 
 public extension UICollectionView {
@@ -89,5 +88,4 @@ public extension UICollectionView {
         public static let sectionHeader = ElementKind(rawValue: UICollectionView.elementKindSectionHeader)
         public static let sectionFooter = ElementKind(rawValue: UICollectionView.elementKindSectionFooter)
     }
-    
 }

@@ -59,5 +59,4 @@ public extension UITableView {
         }
         return headerFooter
     }
-    
 }
