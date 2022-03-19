@@ -18,7 +18,7 @@ public extension UICollectionView {
     
     /// Returns a reusable collection-view cell object for the specified type.
     ///
-    /// To use this method, you need to register cell by using register(_ cellClass:) method.
+    /// To use this method, you need to register cell by using `register(_ cellClass:)` method in advance.
     ///
     ///     class CustomCell: UICollectionViewCell {
     ///         var someProperty: String?
