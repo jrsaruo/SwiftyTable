@@ -24,7 +24,7 @@ Pure-Swift library for statically typed table components.
 To use the `SwiftyTable` library in a SwiftPM project, add the following line to the dependencies in your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/jrsaruo/SwiftyTable", from: "2.0.2"),
+.package(url: "https://github.com/jrsaruo/SwiftyTable", from: "2.0.3"),
 ```
 
 and add `SwiftyTable` as a dependency for your target:
