@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.summary                 = "Pure-Swift library for statically typed table components."
   s.homepage                = "https://github.com/jrsaruo/SwiftyTable"
   s.author                  = { "Yusaku Nishi" => "jrsaruo@gmail.com" }
-  s.social_media_url        = "http://twitter.com/jrsaruo"
+  s.social_media_url        = "https://twitter.com/jrsaruo_tech"
 
   s.platform                = :ios, "12.0"
   s.ios.deployment_target   = '12.0'
