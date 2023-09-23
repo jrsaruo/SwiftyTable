@@ -19,5 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
+      - name: Print the CocoaPods version
+        run: pod --version
+      
       - name: Publish to CocoaPods
         run: pod trunk push ${{ github.event.repository.name }}.podspec
