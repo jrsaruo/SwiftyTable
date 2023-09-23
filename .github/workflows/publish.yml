@@ -2,8 +2,12 @@ name: Publish
 
 on:
   # Triggers the workflow on release events
-  release:
-    types: [ published ]
+  pull_request:
+    types:
+        - opened
+        - synchronize
+        - edited
+        - reopened
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -14,13 +18,19 @@ jobs:
     
     env:
       COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-      LIBRARY_VERSION: ${{ github.event.release.tag_name }}
+      LIBRARY_VERSION: "2.0.2"
     
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Print the path to pod
+        run: which pod
+      
+      - name: Update CocoaPods
+        run: gem update cocoapods
       
       - name: Print the CocoaPods version
         run: pod --version
       
       - name: Publish to CocoaPods
-        run: pod trunk push ${{ github.event.repository.name }}.podspec
+        run: pod lib lint
